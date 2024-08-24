@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-rest-api
+  labels:
+    app: python-rest-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-rest-api
+  template:
+    metadata:
+      labels:
+        app: python-rest-api
+    spec:
+      containers:
+      - name: python-rest-api
+        image: davidh120/python-rest-api:1.0.0
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "500Mi"
