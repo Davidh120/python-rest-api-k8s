@@ -1,14 +1,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: python-rest-api
+  name: {{.Values.appName}}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: python-rest-api
-  minReplicas: 1
-  maxReplicas: 2
+    name: {{.Values.appName}}
+  minReplicas: {{.Values.spec.minReplicas}}
+  maxReplicas: {{.Values.spec.maxReplicas}}
   behavior:
     scaleDown:
       stabilizationWindowSeconds: 600

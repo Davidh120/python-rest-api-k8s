@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: python-rest-api
+  name: {{.Values.appName}}
 spec:
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8000
   selector:
-    app: python-rest-api
+    app: {{.Values.appName}}
   type: ClusterIP

@@ -1,0 +1,6 @@
+namespace: dev
+appName: python-rest-api
+replicas: 2
+spec:
+  minReplicas: 1
+  maxReplicas: 1
