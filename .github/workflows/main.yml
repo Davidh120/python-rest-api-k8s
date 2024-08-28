@@ -33,6 +33,10 @@ jobs:
         git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-chart
         cd python-rest-api-chart
 
+    - name: Delete desarrollo-0.1.0.tgz
+      run: |
+        find . -name 'desarrollo-0.1.0.tgz' -exec rm -f {} \;
+
     - name: Build chart and index file
       run: |
         cd python-rest-api-chart
