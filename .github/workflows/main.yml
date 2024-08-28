@@ -30,7 +30,7 @@ jobs:
         repository: 'https://github.com/Davidh120/python-rest-api-chart'
         branch: 'main'
       run: |
-        git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-k8s
+        git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-chart
         cd python-rest-api-chart
 
     - name: Build chart and index file
