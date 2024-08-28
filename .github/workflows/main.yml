@@ -51,7 +51,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "New chart"
-        git remote set-url origin https://Davidh120:${{ env.GITHUB_TOKEN }}@github.com/Davidh120/python-rest-api-chart.git
+        git remote set-url origin https://Davidh120:${{ env.GITHUB_TOKEN }}@github.com/Davidh120/python-rest-api-chart
         git push origin main
 
     - name: Add repo to helm
