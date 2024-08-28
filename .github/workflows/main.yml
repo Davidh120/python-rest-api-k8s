@@ -56,7 +56,7 @@ jobs:
 
     - name: Add repo to helm
       run: |
-        helm repo add python-rest-api-chart https://your_github.github.io/python-rest-api-chart
+        helm repo add python-rest-api-chart https://davidh120.github.io/python-rest-api-chart/
         helm install desarrollo python-rest-api-chart/desarrollo
 
         
