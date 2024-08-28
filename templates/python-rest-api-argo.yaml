@@ -8,7 +8,7 @@ spec:
   source:
     chart: desarrollo
     repoURL: https://github.com/Davidh120/python-rest-api-chart.git
-    path: ./desarrollo
+    path: ./desarrollo-0.1.0.tgz
     targetRevision: HEAD
     helm:
       releaseName: python-rest-api
