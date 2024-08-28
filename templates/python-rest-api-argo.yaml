@@ -11,8 +11,7 @@ spec:
     path: "."
     targetRevision: HEAD
     helm:
-      releaseName: helm:
-      releaseName: sealed-secrets
+      releaseName: python-rest-api
   syncPolicy:
     automated:
       prune: true
