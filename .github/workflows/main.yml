@@ -24,4 +24,32 @@ jobs:
         rm helm-v3.9.3-linux-amd64.tar.gz
         rm -rf linux-amd64
         helm version
+
+    - name: Clone externa repository
+      env:
+        repository: 'https://github.com/Davidh120/python-rest-api-chart'
+        branch: 'main'
+      run: |
+        git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-k8s
+        cd python-rest-api-k8s
+
+    - name: Build chart and index file
+      run: |
+        cd python-rest-api-chart
+        helm package myapp
+        helm repo index . --url https://github.com/Davidh120/python-rest-api-k8s.git
+ 
+    - name: Push chart
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN_REPOSITORY }}
+      run: |
+        cd python-rest-api-chart
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "New chart"
+        git remote set-url origin https://Davidh120:${{ env.GITHUB_TOKEN }}@github.com/Davidh120/python-rest-api-chart.git
+        git push origin main
+
+        
         
