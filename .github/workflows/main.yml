@@ -40,7 +40,7 @@ jobs:
         git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-chart
         mv desarrollo-0.1.0.tgz python-rest-api-chart
         cd python-rest-api-chart
-        helm repo index . --url https://github.com/Davidh120/python-rest-api-chart.git
+        helm repo index . --url https://github.com/Davidh120/python-rest-api-chart/blob/main/
  
     - name: Push chart
       env:
