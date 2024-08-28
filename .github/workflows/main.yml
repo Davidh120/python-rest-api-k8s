@@ -37,6 +37,7 @@ jobs:
         repository: 'https://github.com/Davidh120/python-rest-api-chart'
         branch: 'main'
       run: |
+        cd ..
         git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-chart
         pwd
         ls -la
