@@ -30,8 +30,6 @@ jobs:
         cd ..
         ls
         helm package ./python-rest-api-k8s
-        pwd
-        ls -la
         helm repo index . --url https://github.com/Davidh120/python-rest-api-chart.git
 
     - name: Clone external repository
@@ -40,6 +38,8 @@ jobs:
         branch: 'main'
       run: |
         git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-chart
+        pwd
+        ls -la
         mv desarrollo-0.1.0.tgz python-rest-api-chart
  
     - name: Push chart
