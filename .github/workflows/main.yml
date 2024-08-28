@@ -30,6 +30,8 @@ jobs:
         cd ..
         ls
         helm package ./python-rest-api-k8s
+        pwd
+        ls -la
         helm repo index . --url https://github.com/Davidh120/python-rest-api-chart.git
 
     - name: Clone external repository
