@@ -5,7 +5,7 @@ metadata:
   labels:
     app: python-rest-api
 spec:
-  replicas: python-rest-api
+  replicas: { { .Values.replicas } }
   selector:
     matchLabels:
       app: python-rest-api
