@@ -36,6 +36,7 @@ jobs:
     - name: Build chart and index file
       run: |
         cd python-rest-api-chart
+        ls
         helm package .
         helm repo index . --url https://github.com/Davidh120/python-rest-api-chart
  
