@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: python-rest-api
-        image: davidh120/python-rest-api:1.0.0
+        image: davidh120/python-rest-api:{ { .Values.image.tag } }
         ports:
           - containerPort: 8000
         resources:
