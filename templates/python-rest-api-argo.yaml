@@ -8,7 +8,6 @@ spec:
   source:
     chart: python-rest-api
     repoURL: https://github.com/Davidh120/python-rest-api-chart.git
-    path: "."
     targetRevision: HEAD
     helm:
       releaseName: python-rest-api
