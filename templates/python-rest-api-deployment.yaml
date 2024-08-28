@@ -18,7 +18,7 @@ spec:
       - name: python-rest-api
         image: davidh120/python-rest-api:1.0.0
         ports:
-        - containerPort: 8000
+          - containerPort: 8000
         resources:
           requests:
             cpu: "100m"
