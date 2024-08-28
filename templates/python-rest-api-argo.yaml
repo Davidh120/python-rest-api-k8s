@@ -6,9 +6,13 @@ metadata:
 spec:
   project: default
   source:
+    chart: python-rest-api
     repoURL: https://github.com/Davidh120/python-rest-api-chart.git
     path: "."
     targetRevision: HEAD
+    helm:
+      releaseName: helm:
+      releaseName: sealed-secrets
   syncPolicy:
     automated:
       prune: true
