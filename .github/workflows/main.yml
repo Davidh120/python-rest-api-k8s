@@ -37,7 +37,7 @@ jobs:
       run: |
         cd python-rest-api-chart
         helm package ..
-        helm repo index . --url https://github.com/Davidh120/python-rest-api-k8s.git
+        helm repo index . --url https://github.com/Davidh120/python-rest-api-chart
  
     - name: Push chart
       env:
