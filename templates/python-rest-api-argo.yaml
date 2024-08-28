@@ -9,9 +9,6 @@ spec:
     repoURL: https://github.com/Davidh120/python-rest-api-chart.git
     path: "."
     targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
   syncPolicy:
     automated:
       prune: true
