@@ -54,5 +54,10 @@ jobs:
         git remote set-url origin https://Davidh120:${{ env.GITHUB_TOKEN }}@github.com/Davidh120/python-rest-api-chart.git
         git push origin main
 
+    - name: Add repo to helm
+      run: |
+        helm repo add python-rest-api-chart https://your_github.github.io/python-rest-api-chart
+        helm install desarrollo python-rest-api-chart/desarrollo
+
         
         
