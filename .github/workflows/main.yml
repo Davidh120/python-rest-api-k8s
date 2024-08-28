@@ -35,13 +35,15 @@ jobs:
 
     - name: Build chart and index file
       run: |
-        helm package .
-        helm repo index . --url https://github.com/Davidh120/python-rest-api-k8s.git
+        cd python-rest-api-chart
+        helm package ./
+        helm repo index ./ --url https://github.com/Davidh120/python-rest-api-k8s.git
  
     - name: Push chart
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_REPOSITORY }}
       run: |
+        cd python-rest-api-chart
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
