@@ -31,7 +31,7 @@ jobs:
         branch: 'main'
       run: |
         git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-chart
-        cd python-rest-api-chart
+        cd python-rest-api-chart && rm desarrollo-0.1.0.tgz 
 
     - name: Delete desarrollo-0.1.0.tgz
       run: |
