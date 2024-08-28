@@ -2,7 +2,7 @@ namespace: app-test
 appName: python-rest-api
 replicas: 2
 image:
-  tag: 0b3ac1524042c0aee7f03539ee4e2fb85f33581e
+  tag: 63c08087921e8b403a483604d76c587d9ccaf7d7
 spec:
   minReplicas: 1
   maxReplicas: 3
