@@ -25,23 +25,20 @@ jobs:
         rm -rf linux-amd64
         helm version
 
-    - name: Clone externa repository
+    - name: Build chart and index file
+      run: |
+        cd ..
+        ls
+        helm package ./python-rest-api-k8s
+        helm repo index . --url https://github.com/Davidh120/python-rest-api-chart.git
+
+    - name: Clone external repository
       env:
         repository: 'https://github.com/Davidh120/python-rest-api-chart'
         branch: 'main'
       run: |
         git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-chart
-        cd python-rest-api-chart && rm desarrollo-0.1.0.tgz 
-
-    - name: Delete desarrollo-0.1.0.tgz
-      run: |
-        find . -name 'desarrollo-0.1.0.tgz' -exec rm -f {} \;
-
-    - name: Build chart and index file
-      run: |
-        cd python-rest-api-chart
-        helm package ..
-        helm repo index . --url https://github.com/Davidh120/python-rest-api-chart.git
+        mv desarrollo-0.1.0.tgz python-rest-api-chart
  
     - name: Push chart
       env:
