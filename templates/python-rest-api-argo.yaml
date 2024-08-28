@@ -6,10 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    chart: desarrollo
-    repoURL: https://github.com/Davidh120/python-rest-api-chart.git
-    path: ./desarrollo-0.1.0.tgz
-    targetRevision: HEAD
+    repoURL: 'https://davidh120.github.io/python-rest-api-chart/'
+    targetRevision: main
+    path: chart
     helm:
       releaseName: python-rest-api
   syncPolicy:
