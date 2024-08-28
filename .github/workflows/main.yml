@@ -28,9 +28,8 @@ jobs:
     - name: Build chart and index file
       run: |
         cd ..
-        ls
         helm package ./python-rest-api-k8s
-        helm repo index . --url https://github.com/Davidh120/python-rest-api-chart.git
+        
 
     - name: Clone external repository
       env:
@@ -39,15 +38,15 @@ jobs:
       run: |
         cd ..
         git clone --single-branch --branch ${{ env.branch }} ${{ env.repository }} python-rest-api-chart
-        pwd
-        ls -la
         mv desarrollo-0.1.0.tgz python-rest-api-chart
+        cd python-rest-api-chart
+        helm repo index . --url https://github.com/Davidh120/python-rest-api-chart.git
  
     - name: Push chart
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_REPOSITORY }}
       run: |
-        cd python-rest-api-chart
+        cd ../python-rest-api-chart
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
