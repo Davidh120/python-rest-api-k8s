@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-rest-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://davidh120.github.io/python-rest-api-chart/'
+    targetRevision: 0.1.0
+    chart: desarrollo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: app-test
