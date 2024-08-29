@@ -9,8 +9,6 @@ spec:
     repoURL: 'https://davidh120.github.io/python-rest-api-chart/'
     targetRevision: 0.1.0
     chart: desarrollo
-    helm:
-      releaseName: python-rest-api
   syncPolicy:
     automated:
       prune: true
