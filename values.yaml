@@ -3,7 +3,7 @@ appName: python-rest-api
 replicas: 2
 image:
   repository: python-rest-api
-  tag: 602d3e2223ad6ca09e16a970cf834731f32a16d8
+  tag: 6dbc3b3cabe01841b350a0710ef86608c525d429
 spec:
   minReplicas: 2
   maxReplicas: 6
