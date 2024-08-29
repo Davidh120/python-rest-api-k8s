@@ -1,9 +1,9 @@
 namespace: app-test
 appName: python-rest-api
-replicas: 2
+replicas: 1
 image:
   repository: python-rest-api
   tag: 6dbc3b3cabe01841b350a0710ef86608c525d429
 spec:
-  minReplicas: 2
-  maxReplicas: 6
+  minReplicas: 1
+  maxReplicas: 3
